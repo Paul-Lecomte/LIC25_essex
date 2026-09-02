@@ -1,50 +1,50 @@
-# Implementing and Evaluating a Simple AI Model
+# Spam Email Classification Assignment
 
-## Assignment Overview
+## Files Included
+- `spam_classifier.py`: Python script implementing spam classification using Scikit-learn
+- `spambase.data`: Dataset downloaded from UCI Machine Learning Repository
+- `analysis.txt`: 300-word analysis covering the problem solved, model performance, and ethical considerations
+- `readme.md`: Original assignment description
 
-Using Python and the Scikit-learn library, implement a simple AI model for a basic prediction task (e.g., predicting housing prices, classifying email as spam or not spam). Train the model on a publicly available dataset (e.g., UCI Machine Learning Repository) and test its accuracy. Evaluate the model’s performance (e.g., accuracy, precision, recall) and discuss its limitations.
+## How to Run
+1. Ensure Python 3.x and required packages are installed (scikit-learn, pandas, numpy)
+2. Run: `python spam_classifier.py`
+3. The script will:
+   - Download the Spambase dataset (if not already present)
+   - Train a Naive Bayes classifier
+   - Evaluate performance using accuracy, precision, recall, and F1-score
+   - Display results including a confusion matrix
 
-## Completion Requirements
+## Dataset Source
+Spambase dataset from UCI Machine Learning Repository:
+https://archive.ics.uci.edu/ml/datasets/Spambase
+- 4601 emails with 57 features each
+- Features include word frequencies, character frequencies, and capital letter sequences
+- Target variable: 0 = not spam, 1 = spam
 
-Create your Python code, the dataset used, and a 300-word analysis discussing:
+## Model Used
+Gaussian Naive Bayes classifier from Scikit-learn
+- Chosen for its simplicity and effectiveness with this type of data
+- Assumes features follow a normal distribution
+- Works well for text classification tasks
 
-1. **The problem the AI model solves**
-2. **The results and model performance metrics**
-3. **Ethical considerations for the dataset and AI model use case** (e.g., potential biases)
+## Performance Results
+As shown in analysis.txt:
+- Accuracy: 83.39%
+- Precision: 71.78%
+- Recall: 95.32%
+- F1-Score: 0.8189
 
-## Guidance on Practical Progression and Use of Sample Code
+The model shows strong ability to detect spam (high recall) with moderate precision, indicating it errs on the side of caution by flagging potential spam rather than missing it.
 
-Students new to programming or computing may find the progression between earlier units and this practical activity challenging. This is expected at postgraduate level, where independent exploration forms part of the learning process.
+## Ethical Considerations
+As discussed in analysis.txt:
+- Dataset may be outdated (1999) and not reflect modern spam techniques
+- False positives could lead to missing important communications
+- Potential bias against certain writing styles or demographics
+- Transparency concerns with automated filtering decisions
+- Broader societal impact of content moderation
 
-For this activity, students are not expected to develop a complete AI solution from scratch. Instead, they are encouraged to learn through reverse engineering, a common and effective approach in professional software development.
-
-To support this, two fully commented sample implementations (Python and Java) are provided. These demonstrate a basic email spam classification model and include example datasets and guidance notes. Students should study, test, and adapt the code to understand how the model functions and how performance can be evaluated.
-
-Students may modify the provided examples and reflect on their findings and can also use and mention the additional files in your assessment report and analysis.
-
-### Available Resources
-- `emailClassifier.js`
-- `spam_classifier.py`
-
-## Skills Developed
-
-- Technical skills in AI and machine learning
-- Data-driven evaluation and performance analysis
-- Critical thinking on ethical and practical AI applications
-
-## Suggested Approach
-
-1. **Select a Dataset**: Choose a publicly available dataset from sources like the UCI Machine Learning Repository
-2. **Implement the Model**: Use Python and Scikit-learn to build a simple classification or regression model
-3. **Evaluate Performance**: Calculate metrics such as accuracy, precision, recall, and F1-score
-4. **Analyze Results**: Discuss what the metrics mean for your model's effectiveness
-5. **Consider Ethics**: Reflect on potential biases in your dataset and implications of your model's use
-
-## Submission Requirements
-
-- Working Python code implementing your AI model
-- Documentation of the dataset used (source, size, features)
-- 300-word analysis covering the three discussion points above
-- Optional: References to how you adapted or learned from the provided sample code
-
----
+## References
+- Scikit-learn documentation: https://scikit-learn.org/
+- UCI Machine Learning Repository: https://archive.ics.uci.edu/

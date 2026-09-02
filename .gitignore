@@ -9,3 +9,4 @@ __pycache__/
 .DS_Store
 Thumbs.db
 /data/
+unit6/implementing_and_evaluating_a_simple_ai_model/spambase.data
