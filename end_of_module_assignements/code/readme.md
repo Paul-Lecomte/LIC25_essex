@@ -6,12 +6,72 @@
 
 This End of Module Assignment has two parts (Parts A and B, weighted at 40% each). Submit both parts by the end of Unit 12.
 
+## Submission Ready Files
+
+### Part A Files (`part_a/`):
+- Modified source code: `part_a/bubsort2.c` (C program reading from CPUPI.txt; compiled and timed with MSVC 2022)
+- Modified source code: `part_a/bubsort.py` (Python program reading from CPUPI.txt with efficient Timsort)
+- Sorted data output: `part_a/sorted_data_full.txt` (all 838,861 values sorted into ascending order by the Python implementation)
+- Evaluation report: `part_a/Part_A_Evaluation_Report.md` (approx. 3,000 words, with a populated results table for both languages)
+
+### Part B Files (`part_b/`):
+- Presentation deck: `part_b/Part_B_Presentation_Deck.pptx` (PowerPoint, 10 slides, in-slide citations + full Harvard reference list)
+- Presentation outline: `part_b/Presentation_Slides.md`
+- Presentation transcript: `part_b/Presentation_Transcript.md` (spoken content for the 15-minute recording)
+- Human-authored research: `part_b/AI_Research_Notes.md`
+- AI-generated response: `part_b/AI_Generated_Response.md` (clearly marked as AI-generated)
+- Critical comparison: `part_b/AI_Human_vs_AI_Comparison.md`
+- Bibliography: `part_b/AI_Sources_Bibliography.md` (18 sources, incl. 9 peer-reviewed)
+
+All written components are ready for submission; the audio recording of the oral presentation remains to be produced (see roadmap). The roadmap below shows completed tasks.
+
 | Part | Format | Weighting | Length |
 | :--- | :----- | :-------- | :----- |
 | **Part A** | Individual programming exercise — comparing programming languages | 40% | 3,000 words equivalent |
 | **Part B** | Individual reflection presentation with Gen-AI comparison | 40% | 15-minute presentation (1,000 words equivalent) |
 
 > Guidance on the use of AI, particularly within summative assessments, can be found in the *Student Information* area.
+
+## Repository Layout
+
+```
+end_of_module_assignements/code/
+├── readme.md                  - this brief + progress roadmap
+├── SUMMARY.md                 - implementation summary
+├── part_a/                    - Part A submission (self-contained; zip this folder)
+│   ├── bubsort2.c             - modified C program (reads CPUPI.txt)
+│   ├── bubsort.py             - modified Python program (efficient Timsort)
+│   ├── CPUPI.txt              - data set to sort (838,861 values)
+│   ├── sorted_data_full.txt   - sorted output (the submitted data file)
+│   └── Part_A_Evaluation_Report.md
+├── part_b/                    - Part B submission (self-contained; zip this folder)
+│   ├── Part_B_Presentation_Deck.pptx
+│   ├── Presentation_Slides.md
+│   ├── Presentation_Transcript.md
+│   ├── AI_Research_Notes.md
+│   ├── AI_Generated_Response.md
+│   ├── AI_Human_vs_AI_Comparison.md
+│   └── AI_Sources_Bibliography.md
+└── scratch/                   - working files only (not for submission; git-ignored)
+```
+
+Both programs locate `CPUPI.txt` next to their own source file, so they can be run from any working directory.
+
+## How to Build and Run
+
+**Python** (from any directory):
+
+```
+python part_a/bubsort.py
+```
+
+**C** with MSVC (from a Visual Studio Developer Command Prompt, any directory):
+
+```
+cl /O2 part_a\bubsort2.c /Fe:bubsort2.exe
+bubsort2.exe          -> sorts the full data set
+bubsort2.exe 100000   -> sorts the first 100,000 values (for timing)
+```
 
 ## Contents
 
@@ -96,14 +156,17 @@ TCC is a small, cross-platform compiler that works on **all** platforms. However
 
 ### Table example
 
-| Data size | C bubble sort time | Python bubble sort time | Python sort time |
-| --------: | :----------------: | :---------------------: | :--------------: |
-| 100 000 | | | |
-| 200 000 | | | |
-| 500 000 | | | |
-| 800 000 | | | |
+### Results table (measured on this machine: Windows 11; MSVC 2022 v14.44 x64, `/O2`; Python 3.12.10)
 
-> Where *X* represents whatever sort algorithm you eventually choose (you can also illustrate your answers with diagrams/charts if you wish).
+| Data size | C bubble sort time | Python bubble sort time | Python sort time (Timsort) |
+| ---------: | :------------------: | :----------------------: | :--------------------------: |
+| 100 000 | 4.115 s (measured) | ~477 s (~8 min, extrapolated) | 0.0174 s (measured) |
+| 200 000 | 36.211 s (measured) | ~1 910 s (~32 min, extrapolated) | 0.0393 s (measured) |
+| 500 000 | 249.627 s (measured) | ~11 940 s (~3.3 h, extrapolated) | 0.1231 s (measured) |
+| 800 000 | 645.251 s (measured) | ~30 600 s (~8.5 h, extrapolated) | ~0.23 s |
+| 838 861 (full set) | 711.551 s (measured) | ~33 600 s (~9.3 h, extrapolated) | 0.2394 s (measured) |
+
+> Values marked "~" are extrapolated from the measured quadratic growth of bubble sort; all other values are measured single runs. The Python bubble sort is extrapolated at large sizes because an 800 000-value O(n^2) run in the interpreter would take most of a day. Diagrams/charts can also be used to illustrate the answers if wished.
 
 ---
 
@@ -181,6 +244,31 @@ It is strongly recommended that, to record your presentation, you use a headset 
 > **Please note:** Appendices should not be used to extend the report as reports should stand alone, complete and concise, without the appendices. They should only be used if required, and only for supplementary and/or supporting information. One key part of the assessment is the need to be to be able to express ideas succinctly, concisely and with necessary brevity.
 
 ---
+
+## Roadmap and Progress Tracking
+
+### Part A: Programming Exercise - Current Status
+- [x] Environment setup and verification
+- [x] Analyze tutor-provided files (bubsort2.c, bubsort.py, CPUPI.txt)
+- [x] Modify bubsort2.c to read from CPUPI.txt
+- [x] Test and validate C implementation (compiled with MSVC 2022; timed at all required sizes; verified SORTED OK)
+- [x] Modify bubsort.py to read from CPUPI.txt
+- [x] Implement more efficient sorting algorithm in Python (Timsort via list.sort())
+- [x] Test and validate Python implementation (verified ascending; 838,861 values written)
+- [x] Execute timing tests for different data sizes (C: 100k-800k measured; Python: all sizes measured)
+- [x] Complete results table
+- [x] Write evaluation report (approx. 3,000 words)
+- [x] Prepare submission package
+
+### Part B: Reflection Presentation - Current Status
+- [x] Select emerging technology (AI, Quantum Computing, or Blockchain) - COMPLETED: Selected AI
+- [x] Conduct human-authored research (6-8 sources) - COMPLETED (18 sources, 9 peer-reviewed)
+- [x] Generate AI response using Generative AI tool - COMPLETED
+- [x] Analyze both responses (human vs AI) - COMPLETED
+- [x] Create presentation slides (up to 10 slides) - COMPLETED: outline + PowerPoint deck with in-slide citations and full Harvard reference list
+- [x] Prepare 15-minute presentation content - COMPLETED: Presentation_Transcript.md
+- [ ] Record presentation with headset and microphone - PENDING (demo + delivery)
+- [ ] Final review and submission - PENDING
 
 ## Before you submit
 
