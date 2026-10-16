@@ -10,3 +10,11 @@ __pycache__/
 Thumbs.db
 /data/
 unit6/implementing_and_evaluating_a_simple_ai_model/spambase.data
+
+# --- LIC25 end-of-module assignment ---
+# Working files, backups and build artifacts (submission files stay tracked)
+scratch/
+*.exe
+*.obj
+*.backup
+*.backup2
