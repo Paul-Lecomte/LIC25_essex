@@ -46,6 +46,7 @@ end_of_module_assignements/code/
 │   └── Part_A_Evaluation_Report.md
 ├── part_b/                    - Part B submission (self-contained; zip this folder)
 │   ├── Part_B_Presentation_Deck.pptx
+│   ├── slides/                - Reveal.js deck (open slides/index.html in a browser; S = speaker notes)
 │   ├── Presentation_Slides.md
 │   ├── Presentation_Transcript.md
 │   ├── AI_Research_Notes.md
@@ -71,6 +72,13 @@ python part_a/bubsort.py
 cl /O2 part_a\bubsort2.c /Fe:bubsort2.exe
 bubsort2.exe          -> sorts the full data set
 bubsort2.exe 100000   -> sorts the first 100,000 values (for timing)
+```
+
+**Presentation** (Reveal.js - no install, no server needed): double-click `part_b/slides/index.html`, then:
+
+```
+F11 / F5  = full screen          S = speaker view (your script + timings)
+arrows    = navigate slides      ESC = overview mode (all slides as grid)
 ```
 
 ## Contents

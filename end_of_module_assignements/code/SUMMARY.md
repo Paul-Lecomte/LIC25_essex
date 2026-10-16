@@ -72,9 +72,10 @@ All required files are organised in `part_a/` and `part_b/` under `end_of_module
 - `part_a/Part_A_Evaluation_Report.md` - Evaluation report (~3,000 words, measured results table)
 
 ### Part B Files (`part_b/`):
-- `part_b/Part_B_Presentation_Deck.pptx` - PowerPoint deck (10 slides, in-slide citations + full reference list)
+- Presentation deck: `part_b/slides/index.html` - Reveal.js deck (runnable HTML; S = speaker notes; offline-capable)
+- PowerPoint version: `part_b/Part_B_Presentation_Deck.pptx` (10 slides, in-slide citations + full reference list, speaker notes)
 - `part_b/Presentation_Slides.md` - 10-slide presentation outline
-- `part_b/Presentation_Transcript.md` - 15-minute spoken transcript
+- `part_b/Presentation_Transcript.md` - 15-minute spoken transcript (with run-sheet)
 - `part_b/AI_Research_Notes.md` - Human-authored research documentation
 - `part_b/AI_Generated_Response.md` - AI-generated response to brief (clearly marked as AI-generated)
 - `part_b/AI_Human_vs_AI_Comparison.md` - Critical comparison analysis
